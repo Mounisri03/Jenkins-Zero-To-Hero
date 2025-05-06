@@ -11,5 +11,10 @@ pipeline{
                 sh "git clone"
             )
         }
+        stage(Dockerbuild){
+            step(
+                sh "docker build -t Sreenivas:$BUILDID"
+            )
+        }
     }
 }
